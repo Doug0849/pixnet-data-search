@@ -249,3 +249,9 @@ copy-btn {
   margin-left: 10px;
 }
 
+.sign {
+  width: 90%;
+  margin: 3rem auto;
+  justify-self: center;
+  text-align:center;
+}
