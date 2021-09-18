@@ -2,6 +2,7 @@ const searchInput = document.querySelector('.search-api-input')
 const googleBlock = document.querySelector('.google-search')
 const dataPanel = document.querySelector('.dataPanel')
 const idSearchBtn = document.querySelector('.id-search-btn')
+const idSearchInput = document.querySelector('.id-search-input')
 let googleSearchInput = null
 let googleSearchBtn = null
 let urlPosition = null
@@ -15,8 +16,8 @@ window.addEventListener("load", function (event) {
   // All resources finished loading![
   googleSearchInput = document.querySelectorAll('#gsc-i-id1')[0]
   googleSearchBtn = document.querySelectorAll('td button')[0]
-  googleSearchInput.addEventListener('keydown',event => {
-    if( event.key === 'Enter') {
+  googleSearchInput.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
       searchBlog()
     }
     return
@@ -27,8 +28,6 @@ window.addEventListener("load", function (event) {
 });
 
 idSearchBtn.addEventListener('click', event => {
-  let idSearchInput = document.querySelector('.id-search-input')
-  console.log(idSearchInput)
   axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
     userData = res.data.user // 將API取得資料丟進變數
     innerData() // 將物件資料置入HTML中
@@ -37,6 +36,20 @@ idSearchBtn.addEventListener('click', event => {
     blogData = res.data.blog // 將API取得資料丟進變數
     innerData() // 將物件資料置入HTML中
   }).catch(error => console.log(error))
+})
+
+idSearchInput.addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
+      userData = res.data.user // 將API取得資料丟進變數
+      innerData() // 將物件資料置入HTML中
+    }).catch(error => console.log(error))
+    axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
+      blogData = res.data.blog // 將API取得資料丟進變數
+      innerData() // 將物件資料置入HTML中
+    }).catch(error => console.log(error))
+  }
+  return
 })
 
 
