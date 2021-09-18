@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Blogger Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="title">徐家蕊最強美麗搜尋器!!</div>
+  <div class="container">
+    <div class="search-function">
+      <div class="google-search">
+        <script src="https://cse.google.com/cse.js?cx=d60d4e898df8a3d55"></script>
+        <div class="gcse-search"></div>
+      </div>
+    </div>
+    <div class="display">
+      <div class="dataPanel">
+        <div class="account">帳號：</div>
+        <div class="input-wrapper">
+          <input type="text" class="account-value copy-text">
+          <button class="data-copy" data-id="0">複製</button>
+        </div>
+        <div class="blogger">部落客：</div>
+        <div class="input-wrapper">
+          <input type="text" class="blogger-value copy-text">
+          <button class="data-copy" data-id="1">複製</button>
+        </div>
+        <div class="blog">部落格名稱：</div>
+        <div class="input-wrapper">
+          <input type="text" class="blog-value copy-text">
+          <button class="data-copy" data-id="2">複製</button>
+        </div>
+        <div class="link">部落格連結：</div>
+        <div class="input-wrapper">
+          <input type="text" class="link-value copy-text">
+          <button class="data-copy" data-id="3">複製</button>
+        </div>
+        <div class="description">部落格描述：</div>
+        <div class="input-wrapper">
+          <textarea type="text" class="description-value copy-text">
+
+          </textarea>
+          <button class="data-copy" data-id="4">複製</button></div>
+        <div class="keyword">關鍵字：</div>
+        <div class="input-wrapper">
+          <textarea type="text" class="keyword-value copy-text">
+            
+          </textarea>
+          <button class="data-copy" data-id="5">複製</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="app.js"></script>
+</body>
+
+</html>

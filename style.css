@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+/* rest css*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*main css*/
+body {
+  font-family: 'Nunito';
+}
+
+.title {
+  padding: 3rem;
+  width: 100%;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container {
+  min-width: 600px;
+  max-width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-function {
+  width: 100% ;
+  display: flex;
+  justify-content: right;
+}
+
+.google-search {
+  width: 50%;
+}
+
+.display {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.dataPanel{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 200px minmax(300px,auto);
+  grid-template-rows: repeat(4,3rem) repeat(2,221px);
+  justify-items: center;
+  align-content: center;
+}
+
+.account,
+.blogger,
+.blog,
+.link,
+.description,
+.keyword {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  line-height: 3rem;
+}
+
+.account-value,
+.blogger-value,
+.blog-value,
+.link-value,
+.description-value,
+.keyword-value {
+  height: 100%;
+  width: 75%;
+  border: 1px solid black;
+  line-height: 3rem;
+}
+
+.input-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+}
+
+.data-copy{
+  height: auto;
+  width: 20%;
+}
+
+copy-btn {
+  width: 50px;
+  height: 10px;
+  border: 1px solid black;
+  background-color: white;
+  margin-left: 10px;
+}
+
