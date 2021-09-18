@@ -1,6 +1,7 @@
 const searchInput = document.querySelector('.search-api-input')
 const googleBlock = document.querySelector('.google-search')
 const dataPanel = document.querySelector('.dataPanel')
+const idSearchBtn = document.querySelector('.id-search-btn')
 let googleSearchInput = null
 let googleSearchBtn = null
 let urlPosition = null
@@ -24,6 +25,20 @@ window.addEventListener("load", function (event) {
     searchBlog()
   })
 });
+
+idSearchBtn.addEventListener('click', event => {
+  let idSearchInput = document.querySelector('.id-search-input')
+  console.log(idSearchInput)
+  axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
+    userData = res.data.user // 將API取得資料丟進變數
+    innerData() // 將物件資料置入HTML中
+  }).catch(error => console.log(error))
+  axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
+    blogData = res.data.blog // 將API取得資料丟進變數
+    innerData() // 將物件資料置入HTML中
+  }).catch(error => console.log(error))
+})
+
 
 function searchBlog() {
   setTimeout(() => {

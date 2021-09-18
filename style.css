@@ -149,7 +149,27 @@ body {
 .search-function {
   width: 100% ;
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id-search-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  grid-gap: 0.5rem;
+}
+
+.id-search-input {
+  height: 25px;
+}
+
+.id-search-btn {
+  height: 30px;
+  background-color: #4D90FE;
+  border: 0 solid white;
+  border-radius: 2px;
+  color: white;
 }
 
 .google-search {
