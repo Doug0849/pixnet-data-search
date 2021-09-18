@@ -14,9 +14,10 @@ let blogData = []
 
 window.addEventListener("load", function (event) {
   // All resources finished loading![
-  googleSearchInput = document.querySelectorAll('#gsc-i-id1')[0]
+  googleSearchInput = document.querySelector('#gsc-i-id1')
   googleSearchBtn = document.querySelectorAll('td button')[0]
   googleSearchInput.addEventListener('keydown', event => {
+    if (!googleSearchInput.value.trim()) return
     if (event.key === 'Enter') {
       searchBlog()
     }
@@ -39,6 +40,7 @@ idSearchBtn.addEventListener('click', event => {
 })
 
 idSearchInput.addEventListener('keydown', event => {
+  if (!idSearchInput.value.trim()) return
   if (event.key === 'Enter') {
     axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
       userData = res.data.user // 將API取得資料丟進變數
