@@ -11,50 +11,6 @@ let userData = []
 let blogData = []
 
 
-
-window.addEventListener("load", function (event) {
-  // All resources finished loading![
-  googleSearchInput = document.querySelector('#gsc-i-id1')
-  googleSearchBtn = document.querySelectorAll('td button')[0]
-  googleSearchInput.addEventListener('keydown', event => {
-    if (!googleSearchInput.value.trim()) return
-    if (event.key === 'Enter') {
-      searchBlog()
-    }
-    return
-  })
-  googleSearchBtn.addEventListener('click', event => {
-    searchBlog()
-  })
-});
-
-idSearchBtn.addEventListener('click', event => {
-  axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
-    userData = res.data.user // 將API取得資料丟進變數
-    innerData() // 將物件資料置入HTML中
-  }).catch(error => console.log(error))
-  axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
-    blogData = res.data.blog // 將API取得資料丟進變數
-    innerData() // 將物件資料置入HTML中
-  }).catch(error => console.log(error))
-})
-
-idSearchInput.addEventListener('keydown', event => {
-  if (!idSearchInput.value.trim()) return
-  if (event.key === 'Enter') {
-    axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
-      userData = res.data.user // 將API取得資料丟進變數
-      innerData() // 將物件資料置入HTML中
-    }).catch(error => console.log(error))
-    axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
-      blogData = res.data.blog // 將API取得資料丟進變數
-      innerData() // 將物件資料置入HTML中
-    }).catch(error => console.log(error))
-  }
-  return
-})
-
-
 function searchBlog() {
   setTimeout(() => {
     urlPosition = document.querySelectorAll('.gs-visibleUrl-breadcrumb') // 找出帳號的網址欄className，
@@ -99,6 +55,48 @@ function innerData() {
   keyword.value = blogData.keyword
 }
 
+
+window.addEventListener("load", function (event) {
+  // All resources finished loading![
+  googleSearchInput = document.querySelector('#gsc-i-id1')
+  googleSearchBtn = document.querySelectorAll('td button')[0]
+  googleSearchInput.addEventListener('keydown', event => {
+    if (!googleSearchInput.value.trim()) return
+    if (event.key === 'Enter') {
+      searchBlog()
+    }
+    return
+  })
+  googleSearchBtn.addEventListener('click', event => {
+    searchBlog()
+  })
+});
+
+idSearchBtn.addEventListener('click', event => {
+  axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
+    userData = res.data.user // 將API取得資料丟進變數
+    innerData() // 將物件資料置入HTML中
+  }).catch(error => console.log(error))
+  axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
+    blogData = res.data.blog // 將API取得資料丟進變數
+    innerData() // 將物件資料置入HTML中
+  }).catch(error => console.log(error))
+})
+
+idSearchInput.addEventListener('keydown', event => {
+  if (!idSearchInput.value.trim()) return
+  if (event.key === 'Enter') {
+    axios.get(`https://emma.pixnet.cc/users/${idSearchInput.value}`).then(res => {
+      userData = res.data.user // 將API取得資料丟進變數
+      innerData() // 將物件資料置入HTML中
+    }).catch(error => console.log(error))
+    axios.get(`https://emma.pixnet.cc/blog?user=${idSearchInput.value}`).then(res => {
+      blogData = res.data.blog // 將API取得資料丟進變數
+      innerData() // 將物件資料置入HTML中
+    }).catch(error => console.log(error))
+  }
+  return
+})
 
 
 dataPanel.addEventListener('click', (e) => {
